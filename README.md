@@ -1,6 +1,6 @@
-# Calculator
+# ListCalc
 
-This website is a calculator for list-based calculations.
+This website is a calculator for performing element-wise operations on lists.
 
 ##### Input entries and compute
 ![](computegif.gif)

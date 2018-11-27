@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-bottom: 120px;
+}
+
+::-moz-selection { color: white; background: #ef5a5a}
+::selection { color: white; background: #ef5a5a}
+input::-moz-selection { color: white; background: #ef5a5a}
+input::selection { color: white; background: #ef5a5a}
+
+::-webkit-input-placeholder {color: rgba(0,0,0,0.3);} /* Chrome/Opera/Safari */
+::-moz-placeholder {color: rgba(0,0,0,0.3);} /* Firefox 19+ */
+:-ms-input-placeholder {color: rgba(0,0,0,0.3);} /* IE 10+ */
+:-moz-placeholder {color: rgba(0,0,0,0.3);} /* Firefox 18- */
+
+input {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#graph {
+  position: fixed;
+  background: #faf9f9;
+  display: none;
+  z-index: 1;
+  cursor: default;
+}
+
+.btnArray {
+  position: fixed;
+  right: 0;
+  top: 0;
+  cursor: default;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  background: rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn--alert {
+  background: #f55 !important;
+}
+
+.btn--saved {
+  background: #503bff !important;
+}
+
+.btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+#listContainer {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+#formula {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  padding: 15px;
+  border: none;
+  background: #f8d0b0;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+#formula:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.list {
+  background: #98ccd3;
+  margin-bottom: 40px;
+  padding-right: 203px;
+}
+
+.listel {
+  height: 30px;
+  margin: 10px 0 10px 10px;
+  text-align: right;
+  font-size: 30px;
+  padding-bottom: 3px;
+  border: 2px solid #ffffff00;
+  background: #ffffffaa;
+}
+
+.listel:focus {
+  outline: none;
+  box-shadow: none;
+  border: 2px solid #364e68;
+  background: white;
+}
+
+.listSum {
+  position: absolute;
+  right: 0;
+  margin: 10px 10px;
+  padding-right: 5px;
+  text-align: right;
+  font-size: 30px;
+  background: #132238;
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+  overflow: scroll;
+}
+
+.listLettering {
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  padding: 10px 0;
+  width: 50px;
+  text-align: center;
+  font-size: 30px;
+  display: inline-block;
+  color: #888;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.listFormula {
+  position: absolute;
+  transform: translateY(-100%);
+  padding: 0 5px;
+  background: #fa0559;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  letter-spacing: 2px;
+}

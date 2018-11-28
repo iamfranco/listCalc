@@ -64,8 +64,7 @@ input {
 #formula {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100vw;
   text-align: center;
   font-size: 30px;
   margin: 0;

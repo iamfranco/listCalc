@@ -86,12 +86,58 @@ function drawBox(listIndex) {
           if (this.value.length > 0 ) { // if el box not empty
             drawBox(listIndex);
           } else { // if el box empty
-            addList();
+            if (listIndex < listContainer.childElementCount-1) { // if list is not last
+              getListElContainerDom(listIndex+1).children[0].focus();
+            } else if (listElContainerDom.childElementCount > 1) { // if list is last and has more than 1 entry
+              addList();
+            }
           }
         } else { // if el box is not last
-          formulaField.focus();
+          listElContainerDom.children[elIndex+1].focus();
         }
         break;
+    }
+  })
+
+  newListElDom.addEventListener('keydown', function(event) {
+    updateList(listIndex);
+    updateListSum(listIndex);
+    var elIndex = parseInt(this.getAttribute('elIndex'));
+    var listElContainerDom = getListElContainerDom(listIndex);
+    switch (event.keyCode) {
+      case 87: // W key pressed
+        event.preventDefault();
+        if (listIndex > 0) {
+          var nextElIndex = Math.min(elIndex, getListElContainerDom(listIndex-1).childElementCount-1);
+          getListElContainerDom(listIndex-1).children[nextElIndex].focus();
+        }
+        break;
+      case 65: // A key pressed
+        event.preventDefault();
+        if (elIndex > 0) listElContainerDom.children[elIndex-1].focus();
+        break;
+      case 83: // S key pressed
+        event.preventDefault();
+        if (listIndex < lists.length-1) {
+          var nextElIndex = Math.min(elIndex, getListElContainerDom(listIndex+1).childElementCount-1);
+          getListElContainerDom(listIndex+1).children[nextElIndex].focus();
+        }
+        break;
+      case 68: // D key pressed
+        event.preventDefault();
+        if (elIndex < listElContainerDom.childElementCount-1) listElContainerDom.children[elIndex+1].focus();
+        break;
+      case 8: // BACKSPACE pressed
+        if (this.value.length === 0 ) { // if el box empty
+          if (elIndex > 0) {
+            event.preventDefault();
+            listElContainerDom.removeChild(this);
+            lists[listIndex].splice(elIndex, 1);
+            listElContainerDom.children[elIndex-1].focus();
+          }
+        }
+        break;
+      default:
     }
   })
 }

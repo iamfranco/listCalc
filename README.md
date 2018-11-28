@@ -11,6 +11,7 @@ A web calculator for performing element-wise operations on lists.
 * A list can also be computed using a **formula**, such as `A * B`. More on that later.
 
 <br>
+
 ### Formula
 A formula can contain:
   * reference alphabets, such as (`A`, `B`, `C`),
@@ -20,6 +21,7 @@ A formula can contain:
 Numerical operations will be performed in an element-wise fashion.
 
 <br>
+
 ### Plot list entries
 ![](graphgif.gif)
 You can plot a list by

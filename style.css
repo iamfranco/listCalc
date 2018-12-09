@@ -8,6 +8,12 @@ body {
 ::selection { color: white; background: #ef5a5a}
 input::-moz-selection { color: white; background: #ef5a5a}
 input::selection { color: white; background: #ef5a5a}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 
 ::-webkit-input-placeholder {color: rgba(0,0,0,0.3);} /* Chrome/Opera/Safari */
 ::-moz-placeholder {color: rgba(0,0,0,0.3);} /* Firefox 19+ */

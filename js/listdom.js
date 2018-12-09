@@ -68,6 +68,7 @@ function drawBox(listIndex) {
   var newListElDom = document.createElement("INPUT");
   newListElDom.classList.add("listel");
   newListElDom.setAttribute('placeholder', "0");
+  newListElDom.setAttribute('type', "number");
   newListElDom.setAttribute('listIndex', listIndex);
   newListElDom.setAttribute('elIndex', listElContainerDom.childElementCount);
   newListElDom.style.width = elBoxWidth + 'px';

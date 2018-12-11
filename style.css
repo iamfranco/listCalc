@@ -8,11 +8,13 @@ body {
 ::selection { color: white; background: #ef5a5a}
 input::-moz-selection { color: white; background: #ef5a5a}
 input::selection { color: white; background: #ef5a5a}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 ::-webkit-input-placeholder {color: rgba(0,0,0,0.3);} /* Chrome/Opera/Safari */
